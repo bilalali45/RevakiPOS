@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="6dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="4dp">
+
+        <LinearLayout
+            android:id="@+id/container_dish_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/tvNetAmount"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container_unit_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:id="@+id/btnPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:text="@string/fa_plus_circle_solid"
+                    android:textColor="#444e5e"
+                    android:textSize="20sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="#444e5e"
+                    android:textSize="16sp" />
+
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:id="@+id/btnMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:text="@string/fa_minus_circle_solid"
+                    android:textColor="#444e5e"
+                    android:textSize="20sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDishName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dish Name"
+                    android:textColor="#444e5e"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvDishPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs. 22.22"
+                    android:textColor="#a9b1be"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNetAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="RS. 500"
+            android:textColor="#444e5e"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvNetAmount"
+            android:layout_alignLeft="@+id/tvNetAmount"
+            android:paddingTop="5dp"
+            android:text="RS. 500"
+            android:textColor="#c7c8ca"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDatetimeStamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/container_dish_detail"
+            android:textSize="12sp"
+            android:textColor="#a9b1be"></TextView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/tvVariantText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Variant"
+            android:textColor="#444e5e"></TextView>
+
+        <TextView
+            android:id="@+id/tvVariantPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvVariantText"
+            android:paddingLeft="20dp"
+            android:text="Rs. 180"
+            android:textColor="#444e5e"></TextView>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lyDishOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E6E6E6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lyItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/fa_shopping_cart_solid"
+                    android:textColor="#444e5e"
+                    android:textSize="20sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+                <TextView
+                    android:id="@+id/tvNoOfItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 item"
+                    android:textAlignment="center"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#E6E6E6" />
+
+            <LinearLayout
+                android:id="@+id/lySpecialInstruction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/fa_info_circle_solid"
+                    android:textColor="#444e5e"
+                    android:textSize="20sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+                <TextView
+                    android:id="@+id/tvSpecialInstruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Special Instruction"
+                    android:textAlignment="center"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#E6E6E6" />
+
+            <LinearLayout
+                android:id="@+id/lyDiscount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/fa_tag_solid"
+                    android:textColor="@color/colorRed"
+                    android:textSize="20sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+
+                <TextView
+                    android:id="@+id/tvDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Discount"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorRed"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line_end"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E6E6E6" />
+
+
+</LinearLayout>

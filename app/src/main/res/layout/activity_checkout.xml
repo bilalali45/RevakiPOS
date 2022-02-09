@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f8"
+    tools:context=".CheckoutActivity">
+
+    <LinearLayout
+        android:id="@+id/lyCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnPay"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSubtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subtotal: Rs. 0"
+                android:textColor="#444e5e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discount: Rs. 0"
+                android:textColor="#c7c8ca"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/tvSaleTax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sale tax 13%: Rs. 0"
+                android:textColor="#c7c8ca"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvDeliveryFeeAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivery Fee: Rs. 0"
+                android:textColor="#c7c8ca"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvNetAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rs 7,120"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp"></TextView>
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etCashAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Cash Amount"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvChangeAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change: Rs. 0"
+                    android:textColor="#c7c8ca"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Card"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/etCardAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/btnSplitCard"
+                        android:hint="Card Amount"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btnSplitCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/button_bg_gray_fill_round"
+                        android:minHeight="25dp"
+                        android:text="Split"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lyCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Card Number"
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etCardNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:hint="Last 4 digits"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lyCardType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card_selected"
+                            android:src="@drawable/visa"
+                            android:tag="Visa" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card"
+                            android:src="@drawable/master"
+                            android:tag="Master" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card"
+                            android:src="@drawable/american_express"
+                            android:tag="AmericanExpress" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card"
+                            android:src="@drawable/union_pay"
+                            android:tag="UnionPay" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card"
+                            android:src="@drawable/pay_pak"
+                            android:tag="PayPak" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/bg_card"
+                            android:tag="Split"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Tip"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etTipAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="Tip Amount"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Customer Name"
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etCustomerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Contact No."
+                    android:textColor="#444e5e"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etContactNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#666"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/lyDeliveryDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery Type: "
+                            android:textColor="#444e5e"
+                            android:textSize="18sp" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rbNow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Now"
+                                android:textColor="#444e5e"
+                                android:textSize="18sp" />
+
+                            <RadioButton
+                                android:id="@+id/rbLater"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Later"
+                                android:textColor="#444e5e"
+                                android:textSize="18sp" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyDeliveryDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDeliveryDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:onClick="btnChangeDeliveryDate_onClick"
+                            android:text="10-Sep-2020"
+                            android:textColor="#444e5e"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btnChangeDate"
+                            android:layout_width="40dip"
+                            android:layout_height="30dip"
+                            android:layout_marginLeft="10dip"
+                            android:layout_marginRight="30dip"
+                            android:background="@drawable/button_bg_light_gray_fill_round"
+                            android:onClick="btnChangeDeliveryDate_onClick"
+                            android:text="..."
+                            android:textColor="#fff" />
+
+                        <TextView
+                            android:id="@+id/tvDeliveryTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:onClick="btnChangeDeliveryTime_onClick"
+                            android:text="03:20 PM"
+                            android:textColor="#444e5e"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/btnChangeTime"
+                            android:layout_width="40dip"
+                            android:layout_height="30dip"
+                            android:layout_marginLeft="10dip"
+                            android:layout_marginRight="30dip"
+                            android:background="@drawable/button_bg_light_gray_fill_round"
+                            android:onClick="btnChangeDeliveryTime_onClick"
+                            android:text="..."
+                            android:textColor="#fff" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Address"
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="2"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Delivery Fee"
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etDeliveryFee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Delivery Company"
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <Spinner
+                        android:id="@+id/spDeliveryCompany"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#666">
+
+                    </Spinner>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Rider Name"
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etRiderName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Rider Mobile No."
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etRiderMobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Rider Bike No."
+                        android:textColor="#444e5e"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/etRiderBikeNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="1"
+
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="#666"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ryCartFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+
+                >
+
+                <com.revaki.revakipos.widget.IconTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fa_check_solid"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="100sp"
+                    app:solid_icon="true">
+
+                </com.revaki.revakipos.widget.IconTextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Done"
+                android:textColor="@color/colorDarkGrayText"
+                android:textSize="25sp" />
+
+
+            <TextView
+                android:id="@+id/tvFinishAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Rs 720"
+                android:textColor="@color/colorDarkGrayText"
+                android:textSize="32sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnReceipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPay"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_gray_round"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <com.revaki.revakipos.widget.IconTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/fa_print_solid"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            app:solid_icon="true">
+
+        </com.revaki.revakipos.widget.IconTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Print Bill"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_bg_gray_fill_round"
+        android:text="Charge Rs. 0"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

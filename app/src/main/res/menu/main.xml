@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_select_customer"
+        android:icon="@android:drawable/ic_menu_more"
+        android:orderInCategory="100"
+        android:title="Select Customer"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_search_customer"
+        android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="100"
+        android:title="Search Customer"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_sync_data"
+        android:orderInCategory="100"
+        android:title="Sync Data"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_end_shift"
+        android:orderInCategory="100"
+        android:title="End Shift"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_backup_order"
+        android:orderInCategory="100"
+        android:title="Backup Order"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_restore_order"
+        android:orderInCategory="100"
+        android:title="Restore Order"
+        app:showAsAction="never" />
+
+</menu>

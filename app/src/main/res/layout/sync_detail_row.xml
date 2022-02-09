@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/tvTableTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Table Name"
+        android:textColor="#444e5e"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvRecordCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTableTitle"
+        android:text="No. of Records : 0"
+        android:textColor="#a9b1be"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvLastSyncedOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRecordCount"
+        android:text="Last Synced On : "
+        android:textColor="#a9b1be"
+        android:textSize="14sp" />
+
+
+    <com.revaki.revakipos.widget.IconTextView
+        android:id="@+id/btnSync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="?selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:text="@string/fa_sync_solid"
+        android:textColor="#444e5e"
+        android:textSize="24sp"
+        app:solid_icon="true">
+
+    </com.revaki.revakipos.widget.IconTextView>
+
+</RelativeLayout>

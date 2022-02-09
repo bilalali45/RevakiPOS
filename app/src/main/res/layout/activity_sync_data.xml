@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".SyncDataActivity">
+
+    <Button
+        android:id="@+id/btnSyncAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_bg_gray_fill_round"
+        android:text="Sync All"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f3f6"
+        android:orientation="horizontal"></LinearLayout>
+
+    <ListView
+        android:id="@+id/listMasterTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#f2f3f6"
+        android:dividerHeight="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f3f6"
+        android:orientation="horizontal"></LinearLayout>
+
+</LinearLayout>

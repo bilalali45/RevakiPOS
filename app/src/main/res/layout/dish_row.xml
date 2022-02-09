@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.revaki.revakipos.widget.RoundCornerImageView
+        android:id="@+id/ivDishImage"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dish_image"
+        app:image_radius="6dp" />
+
+    <TextView
+        android:id="@+id/tvDishName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ivDishImage"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Dish Name"
+        android:textColor="#444e5e"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCategoryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDishName"
+        android:layout_toRightOf="@id/ivDishImage"
+        android:paddingLeft="15dp"
+        android:text="Category Name"
+        android:textColor="#444e5e"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tvDishPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:text="Rs. 500"
+        android:textSize="15sp"
+        android:textColor="#444e5e" />
+
+</RelativeLayout>

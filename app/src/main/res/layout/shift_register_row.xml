@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+
+    <TextView
+        android:id="@+id/tvOpenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Date"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCloseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Close Date"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvOpenTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOpenDate"
+        android:text="Open Date"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCloseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCloseDate"
+        android:layout_alignParentRight="true"
+        android:text="Close Date"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvOpenAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOpenTime"
+        android:text="Open Amount"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCloseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCloseTime"
+        android:layout_alignParentRight="true"
+        android:text="Close Amount"
+        android:textColor="#444e5e"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvShiftStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOpenAmount"
+        android:text="Shift Closed"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvShiftType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCloseAmount"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:textColor="#444e5e"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconTextView">
+        <attr name="brand_icon" format="boolean" />
+        <attr name="solid_icon" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundCornerImageView">
+        <attr name="image_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IconButton">
+        <attr name="button_text" format="string" />
+        <attr name="button_brandIcon" format="boolean" />
+        <attr name="button_solidIcon" format="boolean" />
+        <attr name="button_iconName" format="string" />
+        <attr name="button_textColor" format="color" />
+        <attr name="button_textSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+</resources>

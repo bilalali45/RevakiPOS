@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".TransactionListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_border">
+
+        <TextView
+            android:id="@+id/tvlblTransactionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Transaction Date : "
+            android:textColor="#222"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTransactionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/btnChangeTransactionDate"
+            android:layout_toRightOf="@id/tvlblTransactionDate"
+            android:clickable="true"
+            android:onClick="btnChangeTransactionDate_onClick"
+            android:paddingLeft="5dp"
+            android:text="24-Dec-2017"
+            android:textColor="#222"
+            android:textSize="18.0sp" />
+
+        <Button
+            android:id="@+id/btnChangeTransactionDate"
+            android:layout_width="40dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_bg_gray_fill_round"
+            android:onClick="btnChangeTransactionDate_onClick"
+            android:text="..."
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dip"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_border">
+
+        <TextView
+            android:id="@+id/tvlblWaiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Waiter : "
+            android:textColor="#222"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spWaiter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tvlblWaiter"></Spinner>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#d0d0d0" />
+
+    <LinearLayout
+        android:id="@+id/tabCloseTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listCloseTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#f2f3f6"
+            android:dividerHeight="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f3f6"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tabActiveTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ListView
+            android:id="@+id/listActiveTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#f2f3f6"
+            android:dividerHeight="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f3f6"
+            android:orientation="horizontal"></LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlEmptyData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="No record found."
+            android:textColor="#ff606060"
+            android:textSize="20.0sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

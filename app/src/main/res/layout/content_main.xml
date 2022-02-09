@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabFloorList"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorWhite"
+        app:tabIndicatorColor="#555555"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#666666"
+        app:tabTextAppearance="@style/FloorTab"
+        app:tabTextColor="#888888" />
+
+
+    <GridView
+        android:id="@+id/gridTables"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:numColumns="2"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/lyTableDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dbdce0"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <com.revaki.revakipos.widget.IconButton
+                android:id="@+id/btnShowTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:padding="8dp"
+                app:button_iconName="@string/fa_angle_left_solid"
+                app:button_solidIcon="true"
+                app:button_text=" Back "
+                app:button_textColor="#222222"
+                app:button_textSize="15.0sp"></com.revaki.revakipos.widget.IconButton>
+
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#dbdce0"
+                android:orientation="horizontal"></LinearLayout>
+
+            <Spinner
+                android:id="@+id/spTable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="0.4"></Spinner>
+
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#dbdce0"
+                android:orientation="horizontal"></LinearLayout>
+
+
+            <Spinner
+                android:id="@+id/spReceipt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_weight="0.4"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dbdce0"
+            android:orientation="horizontal"></LinearLayout>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabCategoryList"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhite"
+            app:tabIndicatorColor="#666666"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#555555"
+            app:tabTextAppearance="@style/CategoryTab"
+            app:tabTextColor="#888888" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dbdce0"
+            android:orientation="horizontal"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhite"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/svDishes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.revaki.revakipos.widget.IconTextView
+                android:id="@+id/btnDishViewMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+                android:text="@string/fa_th_large_solid"
+                android:textColor="#555555"
+                android:textSize="25sp"
+                app:solid_icon="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dbdce0"
+            android:orientation="horizontal"></LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="6dp">
+
+            <GridView
+                android:id="@+id/gridDishes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/lyFooter"
+                android:layout_alignParentTop="true"
+                android:numColumns="3" />
+
+
+            <LinearLayout
+                android:id="@+id/lyDishList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/lyFooter"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/listDish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#f2f3f6"
+                    android:dividerHeight="1dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f2f3f6"
+                    android:orientation="horizontal"></LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDropDish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/lyFooter"
+                android:layout_marginBottom="150dp"></TextView>
+
+            <LinearLayout
+                android:id="@+id/lyFooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnOptions"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_light_gray_fill_round"
+                    android:text="..."
+                    android:layout_marginRight="10dp"/>
+
+                <Button
+                    android:id="@+id/btnProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg_gray_fill_round"
+                    android:text="No item = Rs. 0"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

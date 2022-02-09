@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_categories"
+        android:icon="@drawable/ic_category"
+        android:title="Categories" />
+
+    <item
+        android:id="@+id/nav_dishes"
+        android:icon="@drawable/ic_product"
+        android:title="Dishes" />
+
+    <item
+        android:id="@+id/nav_transactions"
+        android:icon="@drawable/ic_transaction"
+        android:title="Transactions" />
+
+    <item
+        android:id="@+id/nav_shift_summary"
+        android:icon="@drawable/ic_file"
+        android:title="Shift Summary" />
+
+    <item
+        android:id="@+id/nav_shift_register"
+        android:icon="@drawable/ic_file"
+        android:title="Shift Register" />
+
+    <item
+        android:id="@+id/nav_day_register"
+        android:icon="@drawable/ic_file"
+        android:title="Day Register" />
+
+    <item
+        android:id="@+id/nav_void_report"
+        android:icon="@drawable/ic_file"
+        android:title="Void Report" />
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/nav_print_test"
+        android:icon="@drawable/ic_file"
+        android:title="Print Test" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Log Out" />
+
+</menu>

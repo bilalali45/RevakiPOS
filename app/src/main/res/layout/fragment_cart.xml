@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CartFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/lySummary"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorWhite"
+            android:divider="#f2f3f6"
+            android:dividerHeight="1dp" />
+
+
+        <LinearLayout
+            android:id="@+id/lySummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/lyFooter"
+            android:background="#f7f7f8"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnPrintKOT"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_kitchen"
+                    android:tooltipText="Print KOT"
+                    android:tint="#555" />
+
+
+                <ImageButton
+                    android:id="@+id/btnPrintPreBill"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_print"
+                    android:tooltipText="Print PreBill"
+                    android:tint="#555" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnWaiter"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:backgroundTint="@color/colorWhite"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_waiter"
+                        android:tint="#555" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tvSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Subtotal: Rs. 0"
+                    android:textColor="#444e5e"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/lyDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+
+                    <com.revaki.revakipos.widget.IconTextView
+                        android:id="@+id/tvRemoveDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fa_times_circle"
+                        android:textColor="@color/colorRed"
+                        android:textSize="20sp"
+                        app:solid_icon="false">
+
+                    </com.revaki.revakipos.widget.IconTextView>
+
+                    <TextView
+                        android:id="@+id/tvDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Add Discount"
+                        android:textColor="#c7c8ca"
+                        android:textSize="19sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lySaleTax"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/tvSaleTaxPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sale tax 13%: "
+                        android:textColor="#c7c8ca"
+                        android:textSize="19sp" />
+
+                    <TextView
+                        android:id="@+id/tvSaleTaxAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs. 0"
+                        android:textColor="#c7c8ca"
+                        android:textSize="19sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvDeliveryFeeAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Delivery Fee: Rs. 0"
+                    android:textColor="#c7c8ca"
+                    android:textSize="19sp" />
+
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Total: Rs. 0"
+                    android:textColor="#444e5e"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnOptions"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_bg_light_gray_fill_round"
+                android:text="..." />
+
+            <Button
+                android:id="@+id/btnCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_bg_gray_fill_round"
+                android:text="No item = Rs. 0"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

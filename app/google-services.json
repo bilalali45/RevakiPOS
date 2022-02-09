@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "425029870428",
+    "firebase_url": "https://revaki-01.firebaseio.com",
+    "project_id": "revaki-01",
+    "storage_bucket": "revaki-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425029870428:android:582bf03beafc364da31799",
+        "android_client_info": {
+          "package_name": "com.revaki.revakipos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425029870428-tquc73t965bsbibnfdq88vpq720uosdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBXAwCtyekKkkVlzxNr7t_06agzS1gY_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425029870428-ukdqsgu30qsdbqql30o3m83cr1ufa5rm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".PrinterListActivity">
+
+    <Button
+        android:id="@+id/btnAddPrinter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_bg_gray_fill_round"
+        android:text="Add Printer"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAddPrinter"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f3f6"
+            android:orientation="horizontal"></LinearLayout>
+
+        <ListView
+            android:id="@+id/listPrinters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#f2f3f6"
+            android:dividerHeight="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f3f6"
+            android:orientation="horizontal"></LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNoRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No Record Found."
+        android:textColor="#444e5e"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

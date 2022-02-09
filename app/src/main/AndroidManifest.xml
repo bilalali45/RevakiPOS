@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.revaki.revakipos">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".KitchenPrinterCategoryActivity"></activity>
+        <activity android:name=".DayRegisterActivity" />
+        <activity android:name=".ShiftRegisterActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".SyncDataActivity" />
+        <activity android:name=".PrinterListActivity" />
+        <activity android:name=".PrinterDetailActivity" />
+        <activity android:name=".PrintViewActivity" />
+        <activity android:name=".EndShiftActivity" />
+        <activity android:name=".StartShiftActivity" />
+        <activity android:name=".CartDiscountActivity" />
+        <activity android:name=".TransactionDetailActivity" />
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".EditCartQuantityPriceActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".TransactionListActivity" />
+        <activity android:name=".DishListActivity" />
+        <activity android:name=".CategoryListActivity" />
+        <activity android:name=".VerifyPINActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LocationActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.revaki.revakipos.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <receiver
+            android:name=".job.UploadDataAlarmBroadcastReceiver"
+            android:process=":remote" />
+
+        <service
+            android:name=".job.UploadDataService"
+            android:exported="false" />
+    </application>
+
+</manifest>
